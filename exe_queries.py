@@ -1,4 +1,5 @@
 from queries.find_user import UserFinder
+from queries.insert_user import InsertUser
 
 
 def check_existence(var, iterate):
@@ -21,3 +22,7 @@ def exe_queries(collection):
 
     filter_user_data = finder.filter_users(addr_email='@mail.com')
     check_existence(filter_user_data, True)
+
+    insert = InsertUser(collection)
+
+    insert.insert_users(2)
